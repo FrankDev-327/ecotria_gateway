@@ -7,10 +7,18 @@ const bodyParse = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 
-server.use(cors())
+const { 
+   route_user,
+   route_datos,
+   route_empresa,
+   route_suscriber,
+} = require('./routes/index');
+
+server.use(cors());
 server.use(bodyParse.urlencoded({
    extended: false
 }));
+
 server.disable('x-powered-by');
 server.use(bodyParse.json());
 server.use(morgan('dev'));
@@ -23,6 +31,11 @@ server.use((req, res, next) => {
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
 });
+
+server.use(setup.main_path, route_user);
+server.use(setup.main_path, route_datos);
+server.use(setup.main_path, route_empresa);
+server.use(setup.main_path, route_suscriber);
 
 server.listen(setup.port, function(){
    console.log('Ecotria Gateway listeing on port: '+ setup.port);
