@@ -1,8 +1,10 @@
 require('dotenv').config();
 
 module.exports = {
-    port: process.env.PORT,
-    places: process.env.PLACES,
-    personal: process.env.PERSONAL,
-    main_path: process.env.MAIN_PATH_ECOTRIA_API
+    KEY: process.env.KEY,
+    PORT: process.env.PORT,
+    PLACES_API: process.env.PLACES_API,
+    PERSONAL_API: process.env.PERSONAL_API,
+    CATEGORY_API: process.env.CATEGORY_API,
+    MAIN_PATH_ECOTRIA_API: process.env.MAIN_PATH_ECOTRIA_API
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 const JWT = require('jwt-simple');
-const setup = require('../config_ecotria/eco_conf');
+const setup = require('../config/setup');
 const moment = require('moment');
 
 exports.encodeMethod = async objectUser => {
@@ -13,5 +13,5 @@ exports.encodeMethod = async objectUser => {
         iap: moment.unix(),
         exp:moment().add(30, "min").unix()
     }
-    return JWT.encode(payload, setup.secret_phase);
+    return JWT.encode(payload, setup.KEY);
 }

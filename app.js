@@ -32,11 +32,11 @@ server.use((req, res, next) => {
     next();
 });
 
-server.use(setup.main_path, route_user);
-server.use(setup.main_path, route_datos);
-server.use(setup.main_path, route_empresa);
-server.use(setup.main_path, route_suscriber);
+server.use(setup.MAIN_PATH_ECOTRIA_API, route_user);
+server.use(setup.MAIN_PATH_ECOTRIA_API, route_datos);
+server.use(setup.MAIN_PATH_ECOTRIA_API, route_empresa);
+server.use(setup.MAIN_PATH_ECOTRIA_API, route_suscriber);
 
-server.listen(setup.port, function(){
-   console.log('Ecotria Gateway listeing on port: '+ setup.port);
+server.listen(setup.PORT, function(){
+   console.log('Ecotria Gateway listeing on port: '+ setup.PORT);
 });

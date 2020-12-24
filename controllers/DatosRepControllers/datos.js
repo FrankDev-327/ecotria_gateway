@@ -1,7 +1,8 @@
 'use strict';
 
+const { PERSONAL_API } = require('../../config/setup')
 const _axios = require('../../setup_axios/conf_axios');
-const datosRequest = _axios('***URL API***');
+const datosRequest = _axios(PERSONAL_API);
 
 async function createDatosResponsable(req, res) {
     try {

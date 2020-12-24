@@ -1,6 +1,6 @@
 'use strict';
 
-const setup = require('../config_ecotria/eco_conf');
+const setup = require('../config/setup');
 var jwt_simple = require('jwt-simple');
 const moment = require('moment');
 
@@ -13,7 +13,7 @@ exports.autenticacion = function (req, res, next) {
     try {
         var tokenSend = req.headers.authorization.replace(/['"]+/g, '');
         try {
-            var dataRegrex = jwt_simple.decode(tokenSend, setup.secret_phase);
+            var dataRegrex = jwt_simple.decode(tokenSend, setup.KEY);
             if (dataRegrex.exp <= moment().unix()) {
                 return res.status(403).json({
                     message: "El token ha expirado"
