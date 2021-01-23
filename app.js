@@ -10,6 +10,7 @@ const cors = require('cors');
 const { 
    route_user,
    route_datos,
+   route_post,
    route_empresa,
    route_suscriber,
 } = require('./routes/index');
@@ -32,6 +33,7 @@ server.use((req, res, next) => {
     next();
 });
 
+server.use(setup.MAIN_PATH_ECOTRIA_API, route_post);
 server.use(setup.MAIN_PATH_ECOTRIA_API, route_user);
 server.use(setup.MAIN_PATH_ECOTRIA_API, route_datos);
 server.use(setup.MAIN_PATH_ECOTRIA_API, route_empresa);
