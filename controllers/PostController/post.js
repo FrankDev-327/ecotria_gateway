@@ -35,7 +35,26 @@ async function listAllPosts(req, res) {
     }
 }
 
+async function viewMyPosts(req, res) {
+    try {
+        var setParams = {
+            params: {
+                _id: req.query._id
+            }
+        }
+        var request = await postRequest.get(req.path, setParams);
+        var info = request.data;
+        return res.status(200).json(info);
+    } catch (error) {
+        console.log(error);
+        return res.status(200).json({
+            error: error.message,
+        });
+    }
+}
+
 module.exports = {
+    viewMyPosts,
     createPost,
     listAllPosts
 }
