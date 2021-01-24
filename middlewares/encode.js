@@ -11,7 +11,7 @@ exports.encodeMethod = async objectUser => {
         apellido :objectUser.apellido,
         correo: objectUser.correo,
         iap: moment.unix(),
-        exp:moment().add(30, "min").unix()
+        exp:moment().add(1, 'day').unix
     }
     return JWT.encode(payload, setup.KEY);
 }

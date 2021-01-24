@@ -5,7 +5,6 @@ var jwt_simple = require('jwt-simple');
 const moment = require('moment');
 
 exports.autenticacion = function (req, res, next) {
-    console.log(req.headers.authorization)
     if (!req.headers.authorization) {
         return res.status(403).json({
             message: "La petición no tiene la cabecera de autenticación"
@@ -15,6 +14,7 @@ exports.autenticacion = function (req, res, next) {
         var tokenSend = req.headers.authorization.replace(/['"]+/g, '');
         try {
             var dataRegrex = jwt_simple.decode(tokenSend, setup.KEY);
+            console.log(dataRegrex)
             if (dataRegrex.exp <= moment().unix()) {
                 return res.status(403).json({
                     message: "El token ha expirado"
