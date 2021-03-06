@@ -1,8 +1,8 @@
 module.exports =  {
-    PostController : require('./PostController/post'),
-    UserController: require('./UsersControllers/user'),
-    DatosController: require('./DatosRepControllers/datos'),
-    EmpresaController : require('./EmpresaControllers/empresa'),
-    SuscriberController: require('./SuscriberControllers/suscriber'),
+    PostController : require('./PersonalInfomation/PostController/post'),
+    UserController: require('./PersonalInfomation/UsersControllers/user'),
+    DatosController: require('./PersonalInfomation/DatosRepControllers/datos'),
+    EmpresaController : require('./PersonalInfomation/EmpresaControllers/empresa'),
+    SuscriberController: require('./PersonalInfomation/SuscriberControllers/suscriber'),
     
 }

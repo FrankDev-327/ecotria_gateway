@@ -2,9 +2,9 @@
 
 //gateway
 
-const { PERSONAL_API } = require('../../config/setup')
-const { encode } = require('../../middlewares/index');
-const _axios = require('../../setup_axios/conf_axios');
+const { PERSONAL_API } = require('../../../config/setup')
+const { encode } = require('../../../middlewares/index');
+const _axios = require('../../../setup_axios/conf_axios');
 const personalRequest = _axios(PERSONAL_API);
 
 async function CreateUsers(req, res) {

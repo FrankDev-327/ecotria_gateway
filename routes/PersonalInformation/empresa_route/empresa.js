@@ -1,8 +1,8 @@
 'use strict';
 
 const express = require('express');
-const { EmpresaController } = require('../../controllers/index');
-const { decode } = require('../../middlewares/index')
+const { EmpresaController } = require('../../../controllers/index');
+const { decode } = require('../../../middlewares/index')
 const api = express.Router();
 
 api.post('/empresa_create/', decode.autenticacion, EmpresaController.createMyEnterprise);

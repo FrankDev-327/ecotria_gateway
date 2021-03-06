@@ -2,8 +2,8 @@
 
 const express = require('express');
 const route = express.Router();
-const { decode } = require('../../middlewares/index')
-const { SuscriberController } = require('../../controllers/index');
+const { decode } = require('../../../middlewares/index')
+const { SuscriberController } = require('../../../controllers/index');
 
 // - La ruta de suscriber-create no debe llevar token
 route.post('/suscriber-create/', decode.autenticacion, SuscriberController.createSuscribers);

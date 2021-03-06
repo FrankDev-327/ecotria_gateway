@@ -1,8 +1,8 @@
 'use strict';
 
 var express = require('express');
-const { PostController } = require('../../controllers/index');
-const { decode } = require('../../middlewares/index')
+const { PostController } = require('../../../controllers/index');
+const { decode } = require('../../../middlewares/index')
 var api = express.Router();
 
 api.post('/post_create/', decode.autenticacion,  PostController.createPost)

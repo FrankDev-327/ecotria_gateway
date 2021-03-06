@@ -1,7 +1,7 @@
 'use strict';
 
-const { MEDIA_API } = require('../../config/setup')
-const _axios = require('../../setup_axios/conf_axios');
+const { MEDIA_API } = require('../../../config/setup')
+const _axios = require('../../../setup_axios/conf_axios');
 const postRequest = _axios(MEDIA_API);
 
 async function createPost(req, res) {

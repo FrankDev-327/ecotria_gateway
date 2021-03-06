@@ -1,8 +1,8 @@
 'use strict';
 
 const express = require('express');
-const { decode } = require('../../middlewares/index')
-const { DatosController } = require('../../controllers/index');
+const { decode } = require('../../../middlewares/index')
+const { DatosController } = require('../../../controllers/index');
 const route = express.Router();
 
 route.post('/datosrespo-create',  decode.autenticacion, DatosController.createDatosResponsable);

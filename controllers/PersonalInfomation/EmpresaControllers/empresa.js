@@ -1,7 +1,7 @@
 'use strict';
 
-const { PERSONAL_API } = require('../../config/setup')
-const _axios = require('../../setup_axios/conf_axios');
+const { PERSONAL_API } = require('../../../config/setup')
+const _axios = require('../../../setup_axios/conf_axios');
 const empresaRequest = _axios(PERSONAL_API);
 
 async function createMyEnterprise(req, res) {

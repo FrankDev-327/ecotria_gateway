@@ -1,9 +1,9 @@
 'use strict';
 
 const express = require('express');
-const { decode } = require('../../middlewares/index')
+const { decode } = require('../../../middlewares/index')
 const routes = express.Router();
-const {UserController} = require('../../controllers/index')
+const {UserController} = require('../../../controllers/index')
 
 routes.post('/user-create', UserController.CreateUsers);
 routes.put('/user-update/:id', decode.autenticacion, UserController.UpdateUsers);
