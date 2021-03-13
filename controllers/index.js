@@ -1,5 +1,5 @@
 module.exports =  {
-    PostController : require('./PersonalInfomation/PostController/post'),
+    PostController : require('./MediaInformation/PostController/post'),
     UserController: require('./PersonalInfomation/UsersControllers/user'),
     DatosController: require('./PersonalInfomation/DatosRepControllers/datos'),
     EmpresaController : require('./PersonalInfomation/EmpresaControllers/empresa'),

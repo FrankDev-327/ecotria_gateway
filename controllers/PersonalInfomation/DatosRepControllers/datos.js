@@ -11,7 +11,7 @@ async function createDatosResponsable(req, res) {
         var info = request.data;
         return res.status(200).json(info);
     } catch (error) {
-        return res.status(200).json({error: error.message})
+        return res.status(200).json({ error: error.message });
     }
 }
 
@@ -22,7 +22,7 @@ async function viewMyDatosResponsable(req, res) {
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
-        return res.status(200).json({error: error.message})
+        return res.status(200).json({ error: error.message })
     }
 }
 
@@ -33,7 +33,7 @@ async function listsDatosResponsable(req, res) {
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
-        return res.status(200).json({error: error.message})
+        return res.status(200).json({ error: error.message })
     }
 }
 
@@ -45,7 +45,7 @@ async function updateDatosResponsable(req, res) {
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
-        return res.status(200).json({error: error.message})
+        return res.status(200).json({ error: error.message })
     }
 }
 

@@ -24,7 +24,8 @@ async function createPost(req, res) {
 
 async function listAllPosts(req, res) {
     try {
-        var request = await postRequest.get(req.path);
+        var params = req.body;
+        var request = await postRequest.post(req.path, params);
         var info = request.data;
         return res.status(200).json(info);
     } catch (error) {
