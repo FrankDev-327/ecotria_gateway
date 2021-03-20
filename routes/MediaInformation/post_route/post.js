@@ -8,6 +8,8 @@ var api = express.Router();
 api.post('/post_create/', decode.autenticacion,  PostController.createPost)
 api.post('/post_list_all/', /*decode.autenticacion,*/ PostController.listAllPosts)
 
+api.post('/post_counter/', PostController.countPostByCategory);
+
 //api.put('/post_update/:_id', /* decode.autenticacion, */ PostController.updateMyPost)
 //api.get('/post_lists/', /* decode.autenticacion, */ PostController.listMyPosts);
 

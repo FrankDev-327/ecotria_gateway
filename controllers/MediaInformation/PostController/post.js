@@ -54,8 +54,22 @@ async function viewMyPosts(req, res) {
     }
 }
 
+async function countPostByCategory(req, res) {
+    try {
+        var request = await postRequest.post(req.path);
+        var info = request.data;
+        return res.status(200).json(info);
+    } catch (error) {
+        console.log(error);
+        return res.status(200).json({
+            error: error.message,
+        });
+    }
+}
+
 module.exports = {
     viewMyPosts,
+    countPostByCategory,
     createPost,
     listAllPosts
 }
