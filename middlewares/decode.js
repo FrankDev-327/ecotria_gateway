@@ -17,12 +17,12 @@ exports.autenticacion = function (req, res, next) {
             console.log(dataRegrex)
             if (dataRegrex.exp <= moment().unix()) {
                 return res.status(403).json({
-                    message: "El token ha expirado"
+                    message: "The token has expired"
                 });
             }
         } catch (excepcion) {
             return res.status(403).json({
-                message: "El token a expirado."
+                message: "The token has expired."
             });
         }
 
