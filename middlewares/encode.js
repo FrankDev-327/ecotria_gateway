@@ -8,6 +8,7 @@ exports.encodeMethod = async objectUser => {
     let payload = {
         _id :objectUser._id,
         nombre: objectUser.nombre,
+        role_user: objectUser.role_user,
         apellido :objectUser.apellido,
         correo: objectUser.correo,
         iap: moment.unix(),

@@ -11,6 +11,7 @@ const {
    route_user,
    route_datos,
    route_post,
+   route_admin,
    route_empresa,
    route_suscriber,
 } = require('./routes/index');
@@ -36,6 +37,7 @@ app.use((req, res, next) => {
    next();
 });
 
+app.use(setup.MAIN_PATH_ECOTRIA_API, route_admin);
 app.use(setup.MAIN_PATH_ECOTRIA_API, route_post);
 app.use(setup.MAIN_PATH_ECOTRIA_API, route_user);
 app.use(setup.MAIN_PATH_ECOTRIA_API, route_datos);

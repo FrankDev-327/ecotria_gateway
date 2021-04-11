@@ -4,5 +4,5 @@ module.exports =  {
     DatosController: require('./PersonalInfomation/DatosRepControllers/datos'),
     EmpresaController : require('./PersonalInfomation/EmpresaControllers/empresa'),
     SuscriberController: require('./PersonalInfomation/SuscriberControllers/suscriber'),
-    
+    AdminController: require('./PersonalInfomation/AdminController/admin')
 }
