@@ -1,6 +1,7 @@
 'use strict';
 
 const { PERSONAL_API } = require('../../../config/setup')
+const { encode_admin } = require('../../../middlewares/index')
 const _axios = require('../../../setup_axios/conf_axios');
 const Cloudinary = require('../../../middlewares/upload_images')
 const adminRequest = _axios(PERSONAL_API);
@@ -47,7 +48,11 @@ async function loginAdmin(req, res) {
         var body = req.body;
         var request = await adminRequest.post(req.path, body);
         var info = request.data;
-        return res.status(200).json(info);
+        var token = encode_admin.encodeMethod(info)
+        return res.status(200).json({
+            info,
+            token:token
+        });
     } catch (error) {
         console.log(error);
         return res.status(200).json(error)
