@@ -6,9 +6,9 @@ const empresaRequest = _axios(PERSONAL_API);
 
 async function createMyEnterprise(req, res) {
     try {
-        var body = req.body;
-        var request = await empresaRequest.post(req.path, body);
-        var info = request.data;
+        const body = req.body;
+        const request = await empresaRequest.post(req.path, body);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
@@ -20,9 +20,9 @@ async function createMyEnterprise(req, res) {
 
 async function updateMyEnterprise(req, res) {
     try {
-        var body = req.body;
-        var request = await datosRequest.put(req.path, body);
-        var info = request.data;
+        const body = req.body;
+        const request = await datosRequest.put(req.path, body);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
@@ -34,8 +34,8 @@ async function updateMyEnterprise(req, res) {
 
 async function viewMyEnterprise(req, res) {
     try {
-        var request = await datosRequest.get(req.path);
-        var info = request.data;
+        const request = await datosRequest.get(req.path);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
@@ -48,8 +48,8 @@ async function viewMyEnterprise(req, res) {
 //queda en veremos.
 async function listsMyEnterprise(req, res) {
     try {
-        var request = await datosRequest.get(req.path);
-        var info = request.data;
+        const request = await datosRequest.get(req.path);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);

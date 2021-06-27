@@ -1,17 +1,16 @@
 'use strict';
 
 //gateway
-
 const { PERSONAL_API } = require('../../../config/setup')
-const { encode } = require('../../../middlewares/index');
+const { encodeMethod } = require('../../../middlewares/index');
 const _axios = require('../../../setup_axios/conf_axios');
 const suscriberRequest = _axios(PERSONAL_API);
 
 async function createSuscribers(req, res) {
     try {
-        var body = req.body;
-        var request = await suscriberRequest.post(req.path, body);
-        var info = request.data;
+        const body = req.body;
+        const request = await suscriberRequest.post(req.path, body);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error)
@@ -23,9 +22,9 @@ async function createSuscribers(req, res) {
 
 async function updateSuscribers(req, res) {
     try {
-        var body = req.body;
-        var request = await suscriberRequest.put(req.path, body);
-        var info = request.data;
+        const body = req.body;
+        const request = await suscriberRequest.put(req.path, body);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error)
@@ -37,10 +36,10 @@ async function updateSuscribers(req, res) {
 
 async function loginSuscribers(req, res) {
     try {
-        var body = req.body;
-        var request = await personalRequest.post(req.path, body);
-        var info = request.data;
-        var token = await encode.encodeMethod(info);
+        const body = req.body;
+        const request = await personalRequest.post(req.path, body);
+        const info = request.data;
+        const token = await encodeMethod(info);
         return res.status(200).json({
             info:info, token:token
         });

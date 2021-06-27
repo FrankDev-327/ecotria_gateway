@@ -6,9 +6,9 @@ const datosRequest = _axios(PERSONAL_API);
 
 async function createDatosResponsable(req, res) {
     try {
-        var body = req.body;
-        var request = await datosRequest.post(req.path, body);
-        var info = request.data;
+        const body = req.body;
+        const request = await datosRequest.post(req.path, body);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         return res.status(200).json({ error: error.message });
@@ -17,8 +17,8 @@ async function createDatosResponsable(req, res) {
 
 async function viewMyDatosResponsable(req, res) {
     try {
-        var request = await datosRequest.get(req.path);
-        var info = request.data;
+        const request = await datosRequest.get(req.path);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
@@ -28,8 +28,8 @@ async function viewMyDatosResponsable(req, res) {
 
 async function listsDatosResponsable(req, res) {
     try {
-        var request = await datosRequest.get(req.path);
-        var info = request.data;
+        const request = await datosRequest.get(req.path);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
@@ -39,9 +39,9 @@ async function listsDatosResponsable(req, res) {
 
 async function updateDatosResponsable(req, res) {
     try {
-        var body = req.body;
-        var request = await datosRequest.put(req.path, body);
-        var info = request.data;
+        const body = req.body;
+        const request = await datosRequest.put(req.path, body);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);

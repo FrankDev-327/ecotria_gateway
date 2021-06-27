@@ -8,12 +8,12 @@ const Cloudinary = require('../../../middlewares/upload_images')
 
 async function createPost(req, res) {
     try {
-        var body = req.body;
+        const body = req.body;
         body.email = req.suscriber.email;
         body._id = req.suscriber._id;
 
-        var request = await postRequest.post(req.path, body);
-        var info = request.data;
+        const request = await postRequest.post(req.path, body);
+        const info = request.data;
         return res.status(200).json(info);
 
     } catch (error) {
@@ -26,9 +26,9 @@ async function createPost(req, res) {
 
 async function listAllPosts(req, res) {
     try {
-        var params = req.body;
-        var request = await postRequest.post(req.path, params);
-        var info = request.data;
+        const params = req.body;
+        const request = await postRequest.post(req.path, params);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
@@ -40,13 +40,13 @@ async function listAllPosts(req, res) {
 
 async function viewMyPosts(req, res) {
     try {
-        var setParams = {
+        const setParams = {
             params: {
                 _id: req.query._id
             }
         }
-        var request = await postRequest.get(req.path, setParams);
-        var info = request.data;
+        const request = await postRequest.get(req.path, setParams);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
@@ -58,8 +58,8 @@ async function viewMyPosts(req, res) {
 
 async function countPostByCategory(req, res) {
     try {
-        var request = await postRequest.post(req.path);
-        var info = request.data;
+        const request = await postRequest.post(req.path);
+        const info = request.data;
         return res.status(200).json(info);
     } catch (error) {
         console.log(error);
@@ -80,11 +80,11 @@ async function updloadPostImage(req, res) {
                         message: 'It was not possible to store the image. Try again.'
                     });
                 }
-                
-                params.img = result.secure_url;
-                var request = await postRequest.post(req.path, params);
 
-                var info = request.data;
+                params.img = result.secure_url;
+                const request = await postRequest.post(req.path, params);
+
+                const info = request.data;
                 return res.status(200).json(info);
             });
 
@@ -96,7 +96,37 @@ async function updloadPostImage(req, res) {
     }
 }
 
+async function amoutsPostByDates(req, res) {
+    try {
+        const params = req.body;
+        const request = await postRequest.post(req.path, params);
+        const info = request.data;
+        return res.status(200).json(info);
+    } catch (error) {
+        //console.log(error);
+        return res.status(200).json({
+            error: error.message,
+        });
+    }
+}
+
+async function countingPriceBetweenValues(req, res) {
+    try {
+        const params = req.body;
+        const request = await postRequest.post(req.path, params);
+        const info = request.data;
+        return res.status(200).json(info);
+    } catch (error) {
+        //console.log(error);
+        return res.status(200).json({
+            error: error.message,
+        });
+    }
+}
+
 module.exports = {
+    amoutsPostByDates,
+    countingPriceBetweenValues,
     viewMyPosts,
     countPostByCategory,
     createPost,
